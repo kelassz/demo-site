@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peachy Juice | Fresh & Natural</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <a href="#" class="logo">juicemaker<span>.</span></a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <button class="cart-button" onclick="toggleCart()">
+            🛒 Cart <span id="cart-count">0</span>
+        </button>
+    </header>
+
+    <!-- HERO SLIDER -->
+    <section class="hero" id="home">
+
+        <div class="hero-slide active"
+            style="background-image: url('https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=1600')">
+        </div>
+
+        <div class="hero-slide"
+            style="background-image: url('https://images.unsplash.com/photo-1546173159-315724a31696?w=1600')">
+        </div>
+
+        <div class="hero-slide"
+            style="background-image: url('https://images.unsplash.com/photo-1622597467836-f3285f2131b8?w=1600')">
+        </div>
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+            <p class="eyebrow">FRESH • NATURAL • DELICIOUS</p>
+            <h1>A little sip of<br><span>happiness.</span></h1>
+            <p>Freshly made juices to brighten your everyday moments.</p>
+            <a href="#products" class="primary-button">Explore Our Juices →</a>
+        </div>
+
+        <div class="slider-dots">
+            <button class="dot active" onclick="showSlide(0)"></button>
+            <button class="dot" onclick="showSlide(1)"></button>
+            <button class="dot" onclick="showSlide(2)"></button>
+        </div>
+    </section>
+
+    <!-- INTRO -->
+    <section class="intro">
+        <p class="eyebrow">MADE WITH LOVE</p>
+        <h2>Goodness in every drop.</h2>
+        <p>Real fruits, fresh ingredients and lots of love.<br>
+        That's our little secret to making your day better.</p>
+    </section>
+
+    <!-- PRODUCT CAROUSEL -->
+    <section class="featured-section">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">OUR FAVOURITES</p>
+                <h2>Fresh picks for you</h2>
+            </div>
+            <div class="carousel-controls">
+                <button onclick="scrollProducts(-1)">←</button>
+                <button onclick="scrollProducts(1)">→</button>
+            </div>
+        </div>
+
+        <div class="product-carousel" id="product-carousel">
+
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=500" alt="Orange juice">
+                <h3>Orange Sunshine</h3>
+                <p>RM 8.00</p>
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=500" alt="Strawberry juice">
+                <h3>Strawberry Bliss</h3>
+                <p>RM 9.00</p>
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1546173159-315724a31696?w=500" alt="Watermelon juice">
+                <h3>Watermelon Fresh</h3>
+                <p>RM 8.00</p>
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1622597467836-f3285f2131b8?w=500" alt="Green juice">
+                <h3>Green Garden</h3>
+                <p>RM 10.00</p>
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1603569283847-aa295f0d016a?w=500" alt="Mango juice">
+                <h3>Mango Paradise</h3>
+                <p>RM 9.00</p>
+            </div>
+
+            <div class="carousel-item">
+                <img src="https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=500" alt="Pineapple juice">
+                <h3>Pineapple Twist</h3>
+                <p>RM 8.00</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PRODUCT GRID -->
+    <section class="products-section" id="products">
+
+        <div class="section-heading centered">
+            <p class="eyebrow">THE JUICE COLLECTION</p>
+            <h2>Find your favourite.</h2>
+            <p>Six delicious flavours, made fresh for you.</p>
+        </div>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?w=600" alt="Orange juice">
+                <div class="product-info">
+                    <span class="product-tag">BESTSELLER</span>
+                    <h3>Orange Sunshine</h3>
+                    <p>Freshly squeezed oranges with a naturally sweet taste.</p>
+                    <div class="product-bottom">
+                        <strong>RM 8.00</strong>
+                        <button onclick="addToCart('Orange Sunshine', 8)">+ Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=600" alt="Strawberry juice">
+                <div class="product-info">
+                    <span class="product-tag">CUSTOMER FAVOURITE</span>
+                    <h3>Strawberry Bliss</h3>
+                    <p>Sweet and refreshing strawberries in every sip.</p>
+                    <div class="product-bottom">
+                        <strong>RM 9.00</strong>
+                        <button onclick="addToCart('Strawberry Bliss', 9)">+ Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1546173159-315724a31696?w=600" alt="Watermelon juice">
+                <div class="product-info">
+                    <span class="product-tag">REFRESHING</span>
+                    <h3>Watermelon Fresh</h3>
+                    <p>Light, juicy and perfect for a sunny afternoon.</p>
+                    <div class="product-bottom">
+                        <strong>RM 8.00</strong>
+                        <button onclick="addToCart('Watermelon Fresh', 8)">+ Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1622597467836-f3285f2131b8?w=600" alt="Green juice">
+                <div class="product-info">
+                    <span class="product-tag">HEALTHY PICK</span>
+                    <h3>Green Garden</h3>
+                    <p>A refreshing blend of green goodness and fresh ingredients.</p>
+                    <div class="product-bottom">
+                        <strong>RM 10.00</strong>
+                        <button onclick="addToCart('Green Garden', 10)">+ Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1603569283847-aa295f0d016a?w=600" alt="Mango juice">
+                <div class="product-info">
+                    <span class="product-tag">TROPICAL</span>
+                    <h3>Mango Paradise</h3>
+                    <p>Rich, creamy and full of tropical mango flavour.</p>
+                    <div class="product-bottom">
+                        <strong>RM 9.00</strong>
+                        <button onclick="addToCart('Mango Paradise', 9)">+ Add</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1621506289937-a8e4df240d0b?w=600" alt="Pineapple juice">
+                <div class="product-info">
+                    <span class="product-tag">TROPICAL</span>
+                    <h3>Pineapple Twist</h3>
+                    <p>A tangy and sweet pineapple treat to brighten your day.</p>
+                    <div class="product-bottom">
+                        <strong>RM 8.00</strong>
+                        <button onclick="addToCart('Pineapple Twist', 8)">+ Add</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ABOUT COMPANY -->
+    <section class="about-section" id="about">
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1543362906-acfc16c67564?w=900" alt="Fresh fruits">
+        </div>
+
+        <div class="about-content">
+            <p class="eyebrow">OUR LITTLE STORY</p>
+            <h2>Freshness you<br>can taste.</h2>
+            <p>
+                At Peachy, we believe that good things start with fresh ingredients.
+                Every juice is carefully prepared using quality fruits to bring
+                you delicious flavours and refreshing moments.
+            </p>
+            <a href="#contact" class="primary-button">Get in touch →</a>
+        </div>
+    </section>
+
+    <!-- COMPANY DETAILS -->
+    <section class="contact-section" id="contact">
+        <p class="eyebrow">WE'D LOVE TO HEAR FROM YOU</p>
+        <h2>Let's stay in touch.</h2>
+
+        <div class="contact-grid">
+            <div>
+                <span>📍</span>
+                <h3>Our Location</h3>
+                <p>123 Your Street, Kuala Lumpur, Malaysia</p>
+            </div>
+
+            <div>
+                <span>📞</span>
+                <h3>Call Us</h3>
+                <p>+60 12-345 6789</p>
+            </div>
+
+            <div>
+                <span>✉️</span>
+                <h3>Email Us</h3>
+                <p>hello@peachyjuice.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <a href="#" class="logo">peachy<span>.</span></a>
+        <p>Freshness in every sip. Happiness in every moment.</p>
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <p class="copyright">© 2026 Peachy Juice. All rights reserved.</p>
+    </footer>
+
+    <!-- CART POPUP -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h2>Your Cart 🛒</h2>
+                <button onclick="toggleCart()">✕</button>
+            </div>
+
+            <div id="cart-items">
+                <p class="empty-cart">Your cart is empty.</p>
+            </div>
+
+            <div class="cart-total">
+                <strong>Total:</strong>
+                <strong id="cart-total">RM 0.00</strong>
+            </div>
+
+            <button class="checkout-button" onclick="checkout()">
+                Order via WhatsApp
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
